@@ -1,0 +1,36 @@
+project:
+  name: LPIA-LightU-Net
+  seed: 42
+  device: cuda
+
+data:
+  root: datasets
+  train_subset: our485
+  test_subset: eval15
+  split_file: splits/lol_v1_seed42.json
+  val_ratio: 0.1031
+
+training:
+  epochs: 50
+  patch_size: 256
+  batch_size: 2
+  num_workers: 0
+  lr: 0.0002
+  weight_decay: 0.000001
+  use_amp: true
+
+model:
+  variant: lpia_lightunet
+  base_channels: 16
+  gamma_min: 0.4
+  gamma_max: 1.0
+
+loss:
+  lambda_ssim: 0.5
+  lambda_tv: 0.05
+
+outputs:
+  output_dir: outputs
+  checkpoint_dir: outputs/checkpoints
+  result_dir: outputs/results
+  best_checkpoint: outputs/checkpoints/lpia_lightunet_best.pt

@@ -1,0 +1,2 @@
+variant,input_h,input_w,device,params,params_m,model_size_mb,flops,gflops,time_mean_ms,time_std_ms,time_median_ms,peak_memory_mb
+zero_dce_lite,256,256,cuda,44824,0.044824,0.170989990234375,5875171328,5.875171328,5.34456512928009,1.546752647257551,5.000192165374756,22.6474609375

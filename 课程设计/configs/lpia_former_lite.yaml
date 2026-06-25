@@ -1,0 +1,37 @@
+project:
+  name: LPIA-Former-Lite
+  seed: 42
+  device: cuda
+
+data:
+  root: datasets
+  split_file: splits/lol_v1_seed42.json
+
+training:
+  epochs: 50
+  patch_size: 192
+  batch_size: 1
+  num_workers: 0
+  lr: 0.0002
+  weight_decay: 0.000001
+  use_amp: true
+  gradient_accumulation_steps: 2
+
+model:
+  variant: lpia_former_lite
+  base_channels: 16
+  gamma_min: 0.35
+  gamma_max: 1.15
+  window_size: 8
+  num_heads: 4
+
+loss:
+  lambda_ssim: 0.5
+  lambda_tv: 0.05
+  lambda_gradient: 0.05
+
+outputs:
+  output_dir: outputs
+  checkpoint_dir: outputs/checkpoints
+  result_dir: outputs/results
+  best_checkpoint: outputs/checkpoints/lpia_former_lite_best.pt

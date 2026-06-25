@@ -1,0 +1,12 @@
+gradio
+matplotlib
+nbformat
+numpy
+opencv-python
+pandas
+Pillow
+PyYAML
+scikit-image
+torch
+torchvision
+tqdm
